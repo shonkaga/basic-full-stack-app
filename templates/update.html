@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Update</title>
+  </head>
+  <body>
+    <div class="container">
+  <!---- NAVIGATION MENU --->
+  <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('index')}}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('add')}}">Add</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{{url_for('delete')}}">Destroy</a>
+  </li>
+      <li class="nav-item">
+    <a class="nav-link" href="{{url_for('update')}}">Update</a>
+  </li>
+    </li>
+      <li class="nav-item">
+    <a class="nav-link" href="{{url_for('search')}}">Search</a>
+  </li>
+</ul>
+     <!---- Jumbotron -->
+  <div class="jumbotron">
+    <h3> Updating a User: </h3>
+    <p> Update a user's info with the selected ID. </p>
+  </div>
+
+    </body>
+  </body>
+</html>
+
+
+ <!-- FORM HERE -->
+ <form action="{{url_for('updated')}}">
+  <div class="form-group">
+    <label for="userID">ID</label>
+    <input type="text" class="form-control" name="userID">
+  </div>
+  <div class="form-group">
+    <label for="username">New Username: </label>
+    <input type="text" class="form-control" name="username">
+  </div>
+    <div class="form-group">
+    <label for="name">New Name: </label>
+    <input type="text" class="form-control" name="name">
+  </div>
+  <input type="submit" value="Update">
+</form>
+<!---- end form -->
+
+<!--- TABLE --->
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for user in userList%}
+    <tr>
+      <td>{{user.id}}</th>
+      <td>{{user.username}}</td>
+      <td>{{user.name}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>

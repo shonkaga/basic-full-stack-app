@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Search</title>
+  </head>
+  <body>
+    <div class="container">
+  <!---- NAVIGATION MENU --->
+  <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('index')}}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('add')}}">Add</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{{url_for('delete')}}">Destroy</a>
+  </li>
+      <li class="nav-item">
+    <a class="nav-link" href="{{url_for('update')}}">Update</a>
+  </li>
+    </li>
+      <li class="nav-item">
+    <a class="nav-link" href="{{url_for('search')}}">Search</a>
+  </li>
+</ul>
+
+     <!---- Jumbotron -->
+  <div class="jumbotron">
+    <h3> Search for a user: </h3>
+    <p> Search for a user given their ID. </p>
+
+    {%if message%}
+<div class="alert alert-success" role="alert">
+  {{message}}
+  </div>
+    {%endif%}
+  </div>
+
+    </body>
+  </body>
+</html>
+
+
+ <!-- FORM HERE -->
+ <form action="{{url_for('searched')}}">
+  <div class="form-group">
+    <label for="userID">ID</label>
+    <input type="text" class="form-control" name="userID">
+
+
+  <input type="submit" value="Search">
+</form>
+<!---- end form -->
