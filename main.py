@@ -36,8 +36,7 @@ class User(db.Model):
   def __repr__(self):
     return (f"USERNAME: {self.username}      NAME:{self.name}")
 
-# fuly start the Tables
-db.create_all()
+
 ######################################################
 #home page
 @app.route('/')
@@ -141,3 +140,5 @@ def searched():
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
+    # fuly start the Tables
+    db.create_all()
