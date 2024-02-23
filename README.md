@@ -1,4 +1,11 @@
 # basic-full-stack-app
 Just a basic full stack app that connects SQLAlchemy, Flask, and Bootstrap.
 
-You can see the actual application hosted on replit :https://user-data.shonkaga.repl.co/
+### Run Dirctions
+
+```bash
+pip3 install flask
+pip3 install flask_sqlalchemy
+python .\main.py
+```
+![alt text](./mvp.png)
